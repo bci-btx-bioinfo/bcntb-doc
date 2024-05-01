@@ -1,14 +1,17 @@
-title: SNPnexus Documentation
-description: Welcome to the SNPnexus documentation site. TThis repository provides information on the data, tools and resources developed and managed by the SNPnexus Team. s
+title: BCNTB Documentation
+description: Welcome to the Breast Cancer Now Tissue Bank (BCNTB) documentation site. This site provides information regarding all the data, tools and resources managed and developed by the BCNTB Team.
 remote_theme: just-the-docs/just-the-docs   # in github server
 # theme: just-the-docs  # locally
 
 url: https://pages.github.qmul.ac.uk/bci-btx-bioinfo/bcntb-doc.github.io/
 
-aux_links:
-  Documentation Repository: https://github.qmul.ac.uk/hfy344/snpnexus-doc.github.io
-
 kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: false
+
+callouts:
+  highlight:
+    title: Introduction
+    color: red
+    opacity: 0.2

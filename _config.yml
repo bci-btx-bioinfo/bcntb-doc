@@ -1,6 +1,7 @@
 title: SNPnexus Documentation
 description: Welcome to the SNPnexus documentation site. TThis repository provides information on the data, tools and resources developed and managed by the SNPnexus Team. s
-theme: just-the-docs  # locally
+remote_theme: just-the-docs/just-the-docs   # in github server
+# theme: just-the-docs  # locally
 
 url: https://pages.github.qmul.ac.uk/bci-btx-bioinfo/bcntb-doc.github.io/
 

@@ -1,7 +1,7 @@
 # bcntb-doc.github.io
 This GitHub Pages serve the middle layer for [BCNTB Documentation Internal Repository](https://github.qmul.ac.uk/bci-btx-bioinfo/BCNTB-Documentation).
 
-Website: [to be updated]
+Website: https://bci-btx-bioinfo.github.io/bcntb-doc/
 
 ## Building and previewing this site locally
 

@@ -15,6 +15,13 @@ Assuming [Jekyll] and [Bundler] are installed on your computer:
 
     The built site is stored in the directory `_site`.
 
+4. Encrypt the websites using [staticrypt](https://github.com/robinmoisson/staticrypt):
+    ```bash
+   # Encrypt documentations for index.html
+   staticrypt _site/index.html -d _site/ -p "XXXX" --short --template-title "Login" --template-instructions "Please enter the password to unlock the page" --template-button "Open Page" --template-color-primary "#113e9f" --template-color-secondary "#e4e4e4"
+
+    ```
+
 ## Publishing your built site on a different platform
 
 Just upload all the files in the directory `_site`.

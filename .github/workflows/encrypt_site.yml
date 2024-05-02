@@ -1,10 +1,8 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: Encrypt Site with staticrypt
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -15,16 +13,12 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    container:
+      image: nikolaik/python-nodejs:python3.11-nodejs20-slim
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,6 +29,16 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Install staticrypt
+        run: npm install -g staticrypt@3.*
+      - name: Encrypt index
+        run: >
+          staticrypt _site/index.html -d _site/ -p ${{ secrets.DECRYPTION_PASSPHRASE }} --short
+          --template-title "Login"
+          --template-instructions "Please enter the password to unlock the page."
+          --template-button "Open Page"
+          --template-color-primary "#113e9f"
+          --template-color-secondary "#e4e4e4"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

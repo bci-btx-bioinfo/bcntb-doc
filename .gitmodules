@@ -1,0 +1,3 @@
+[submodule "bcntb-documentation"]
+	path = bcntb-documentation
+	url = git@github.com:bci-btx-bioinfo/bcntb-documentation.git

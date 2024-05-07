@@ -20,20 +20,27 @@ jobs:
     container:
       image: nikolaik/python-nodejs:python3.11-nodejs20-slim
     steps:
+      - name: Install Git
+        run: |
+          apt update
+          apt install -y git    
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true
+          token: ${{ secrets.BCNTB_PAT_TOKEN }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: ./bcntb-documentation
           destination: ./_site
       - name: Install staticrypt
         run: npm install -g staticrypt@3.*
       - name: Encrypt index
         run: >
-          staticrypt _site/index.html -d _site/ -p ${{ secrets.DECRYPTION_PASSPHRASE }} --short
+          staticrypt _site/* -r -d _site/ -p ${{ secrets.DECRYPTION_PASSPHRASE }} --short
           --template-title "Login"
           --template-instructions "Please enter the password to unlock the page."
           --template-button "Open Page"

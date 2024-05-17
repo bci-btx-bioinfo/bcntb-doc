@@ -41,6 +41,7 @@ jobs:
       - name: Encrypt index
         run: >
           staticrypt _site/* -r -d _site/ -p ${{ secrets.DECRYPTION_PASSPHRASE }} --short
+          --template "password_template.html"
           --template-title "Login"
           --template-instructions "Please enter the password to unlock the page."
           --template-button "Open Page"

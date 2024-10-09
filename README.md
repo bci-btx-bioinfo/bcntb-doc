@@ -32,6 +32,22 @@ You're free to customize sites that you create with this template, however you l
 
 [Browse Just the Docs documentation][Just the Docs] to learn more about how to use this theme.
 
+## Synchronisation
+
+This repository will automatically sync the [BCNTB Documentation internal repository](https://github.qmul.ac.uk/bci-btx-bioinfo/BCNTB-Documentation) every day at 00:00 UTC.
+
+To manually sync the BCNTB Documentation internal repository, you can either:
+
+1. Run the [`sync_docs.sh`](./sync_docs.sh) script locally (make sure your GitHub SSH keys are properly configured):
+   ```bash
+   bash sync_docs.sh
+
+   ```
+2. Manually trigger the Sync Documentation workflow:
+    - Go to the `Actions` tab of this repository.
+    - Select the `Sync Documentation` workflow.
+    - Click the `Run workflow` button.
+
 ----
 
 [Jekyll]: https://jekyllrb.com
